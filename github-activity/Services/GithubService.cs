@@ -9,13 +9,21 @@ namespace github_activity.Services
 {
     public class GithubService(HttpClient _client) : IGithubService
     {
-        public async Task<IEnumerable<GithubEvent>> GetUserActivity(string username)
+        public async Task<IEnumerable<GithubEvent>?> GetUserActivity(string username)
         {
-            var response = await _client.GetStringAsync($"users/{username}/events");
+            try
+            {
+                var response = await _client.GetStringAsync($"users/{username}/events");
 
-            var events = System.Text.Json.JsonSerializer.Deserialize<IEnumerable<GithubEvent>>(response);
-            
-            return events;
+                var events = System.Text.Json.JsonSerializer.Deserialize<IEnumerable<GithubEvent>>(response);
+                
+                return events;
+            }
+            catch(HttpRequestException ex)
+            {
+                Console.WriteLine($"Error fetching activity: {ex.Message}");
+                return null;
+            }
         }
     }
 }

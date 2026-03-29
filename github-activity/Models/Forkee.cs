@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace github_activity.Models
 {
-    public class Repo
+    public class Forkee
     {
-        public int id { get; set; }
-        public string? name { get; set; }
-        public string? url { get; set; }
+        public string? Full_name { get; set; }
     }
 }

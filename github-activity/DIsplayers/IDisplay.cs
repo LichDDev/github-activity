@@ -5,10 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace github_activity.Services
+namespace github_activity.DIsplayers
 {
-    interface IGithubService
+    public interface IDisplay
     {
-        public Task<IEnumerable<GithubEvent>?> GetUserActivity(string username);
+        GithubEvent Data { get; set; }
+
+        void showActivity();
     }
 }
