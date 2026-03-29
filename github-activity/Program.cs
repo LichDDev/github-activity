@@ -26,7 +26,7 @@ var service = new GithubService(client);
 
 var events = await service.GetUserActivity(user);
 
-if (events == null)
+if (events.Count() == 0 ||events == null)
 {
     Console.WriteLine("No activity found for the user.");
     return;
