@@ -4,6 +4,8 @@ A command-line tool built with **C# and .NET** to fetch and display recent activ
 
 This project is part of the  [roadmap.sh Backend Projects](https://roadmap.sh/projects/github-user-activity).
 
+![.NET](https://img.shields.io/badge/.NET-8.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ## ✨ Features
 
